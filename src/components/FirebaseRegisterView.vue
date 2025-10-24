@@ -7,7 +7,7 @@
     <input type="password" placeholder="Password" v-model="password" />
   </p>
   <p>
-    <button @click="register">Save to Firebase</button>
+    <button @click="register">Save to Firebase!</button>
   </p>
 </template>
 

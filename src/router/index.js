@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import FirebaseSigninView from '../components/FirebaseSigninView.vue'
 import FirebaseRegisterView from '../components/FirebaseRegisterView.vue'
 import AddBookView from '../views/AddBookView.vue'
+import GetBookCountView from '@/views/GetBookCountView.vue'
+import WeatherView from '@/views/WeatherView.vue'
+import CountBookAPI from '@/views/CountBookAPI.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -33,6 +36,21 @@ const router = createRouter({
       path: '/addbook',
       name: 'AddBook',
       component: AddBookView,
+    },
+    {
+      path: '/GetBookCount',
+      name: 'GetBookCount',
+      component: GetBookCountView,
+    },
+    {
+      path: '/WeatherCheck',
+      name: 'WeatherCheck',
+      component: WeatherView,
+    },
+    {
+      path: '/CountBookAPI',
+      name: 'CountBookAPI',
+      component: CountBookAPI,
     },
   ],
 })

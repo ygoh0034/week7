@@ -1,22 +1,32 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import CountBookAPI from './views/CountBookAPI.vue'
 import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+    CountBookAPI,
+  },
+  computed: {
+    showHeader() {
+      return this.$route.name !== 'CountBookAPI'
+    },
+  },
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
+  <header></header>
+  <div class="main-container">
+    <header v-if="showHeader">
+      <HelloWorld />
+    </header>
+    <main class="main-box">
+      <router-view></router-view>
+    </main>
+  </div>
   <RouterView />
 </template>
 
